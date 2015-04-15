@@ -1,0 +1,126 @@
+div.columns {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+div.column {
+	text-align: left;
+	display: inline-block;
+	padding: 10px 20px;
+	width: 49%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	vertical-align: top;
+}
+
+ul {
+	padding-left: 20px;
+}
+
+
+
+
+
+
+section#purpleform {
+	padding: 20px;
+	max-width: 750px;
+	margin: 0 auto 0 auto;
+	background-image: url("../images/standard/purple-stripe-bg.png");
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+section#purpleform h2 {
+	color: #FFC627;
+}
+
+div.margin {
+	margin: 2px;
+}
+div.margin:first-child {
+	margin-left: 0;
+}
+div.margin:last-child {
+	margin-right: 0;
+}
+input[type=text].stretch, input[type=email].stretch, input[type=phone].stretch, input[type=number].stretch, textarea.stretch {
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+textarea {
+	height: 60px;
+}
+div#chars-remaining {
+	text-align: right;
+	font-size: 12px;
+}
+div#chars-remaining.warning {
+	color: #D3242B;
+}
+
+
+div.application-question {
+	margin: 30px 0 0 0;
+	text-align: left;
+}
+div.application-button {
+	margin: 30px 0 0 0;
+	text-align: center;
+}
+div.radio-container {
+	margin: 0 5px 0 20px;
+}
+
+
+table#work-history > thead > tr > th {
+	text-align: left;
+	font-size: 11px;
+	color: #fff;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+	padding: 2px 4px;
+	vertical-align: bottom;
+	border: none;
+}
+
+table#work-history > tbody > tr > td {
+	padding: 2px 4px;
+}
+
+div#add-company {
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 15px;
+	font-size: 14px;
+	color: #fec524;
+	text-align: left;
+}
+div#add-company:hover {
+	text-decoration: underline;
+}
+div#add-company > img {
+	width: 20px;
+	margin-right: 6px;
+}
+
+td.remove-work-history {
+	cursor: pointer;
+}
+td.remove-work-history > img {
+	width: 20px;
+}
+
+input#resumeFile {
+	display: none;
+}

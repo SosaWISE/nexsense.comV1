@@ -1,0 +1,21 @@
+div.faq-box {
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px 15px 10px 15px;
+	padding: 5px;
+	max-width: 300px;
+	min-width: 230px;
+	text-align: left;
+}
+
+div.faq-question {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	color: #FFC627;
+}
+
+div.faq-answer {
+	font-size: 13px;
+	color: #707170;
+}

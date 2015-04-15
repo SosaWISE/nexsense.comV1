@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+        <script language="javascript" type="text/javascript" src="view/js/angular/angular.min.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/common-1.3.0.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/standard.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/standard.css" />
+
+        <!-- Editable head -->
+
+        <title>Nexsense Home Security</title>
+        <meta name="description" content="Work at Nexsense, a pioneer in customer-friendly home security services." />
+        <meta name="keywords" content="Nexsense, home security, alarm system, home automation, home management, home control, smart home" />
+        <script language="javascript" type="text/javascript" src="view/js/careers.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/careers.css" />
+
+        <!-- END Editable head -->
+
+    </head>
+    <body ng-app="MySite">
+        <div id="wrapper">
+            <header></header>
+            <!-- Body -->
+
+                <div ng-controller="CareersPage">
+
+
+                    <section id="careers-hero">
+                        <div>
+                            <h1>Now hiring awesomeness.</h1>
+                            <p>In other words, people who are laid-back, self-starting, and gung-ho about changing the way people think about home security and automation.</p>
+                        </div>
+                    </section>
+
+                    <section class="content">
+                        <h2>Work hard. Play hard.</h2>
+                        <p>
+                            The truth is, we spend as much time with the people we work with as our own family. That’s why it’s important for us to hire talented folks with awesome personalities that fit into the culture of our family. If you believe in promoting peace of mind and happiness by creating a safer and simpler world, we want to hear from you.
+                        </p>
+                    </section>
+
+                    <div class="divider"></div>
+
+                    <section class="content">
+                        <div class="container">
+                            Here’s a list of our current job openings:
+
+                            <div id="all-jobs">
+
+                                <div class="job" ng-repeat="job in jobs">
+                                    <div>
+                                        <h2 class="toggle job-title" ng-click="setActiveJob(job)">{{job.title}}</h2>
+                                        <span class="job-location">{{job.location}}</span>
+                                    </div>
+                                    <div class="job-description">
+                                        {{job.blurb}}
+                                        <input type="button" class="small tertiary" ng-click="setActiveJob(job)" ng-show="activejob!=job" value="more" />
+                                    </div>
+                                    <div class="full-job-description" ng-show="activejob==job">
+                                        <div ng-bind-html="job.description"></div>
+                                        <div class="button-container"><input type="button" class="chevron" ng-click="navigateTo(job.url)" value="apply" /></div>
+                                        <div class="complement-divider"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="divider"></div>
+
+                    <section class="content">
+                        <h2>Let's keep in touch</h2>
+                        <p>
+                            We always want to stay connected with talented people.  If you want a career that makes a difference and you're excited to work hard and play hard, send us your resume so we can get connected.  Let's expand our networks together.
+                            <div class="button-container"><input type="button" class="chevron" ng-click="navigateTo('https://nexsense.applicantpro.com/jobs/185043-37067.html')" value="apply" /></div>
+                        </p>
+                    </section>
+                </div>
+                
+            <!-- END Body -->
+        </div>
+        <footer></footer>
+    </body>
+</html>            

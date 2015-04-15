@@ -1,0 +1,200 @@
+section#product-grid {
+    background: linear-gradient(90deg, #CFCFCE, #fff);
+    background: -moz-linear-gradient(90deg, #CFCFCE, #fff);
+    background: -ms-linear-gradient(90deg, #CFCFCE, #fff);
+    background: -webkit-linear-gradient(90deg, #CFCFCE, #fff);
+    padding: 20px 40px 40px 40px;
+}
+
+section#product-grid > div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+}
+
+div.product {
+    flex: 0 0 280px;
+    -webkit-flex: 0 0 280px;
+    -ms-flex: 0 0 280px;
+    -moz-flex: 0 0 280px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 280px;
+    border: none;
+    background-color: rgba(112, 113, 112, 0.05);
+    padding: 20px;
+    margin: 5px;
+    position: relative;
+}
+div.product:hover {
+    background-color: rgba(112, 113, 112, 0.1);
+    cursor: pointer;
+}
+div.product div.product-desc {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    bottom: 15px;
+    left: 0;
+    z-index: 5;
+}
+div.product div.product-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #62259D;
+}
+
+div.product div.product-value sub {
+    vertical-align: baseline;
+    font-size: 15px;
+}
+
+section#what-do-i-get {
+    background-color: #62259D;
+    background-image: url(../images/standard/purple-bg.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    padding: 40px 0 0 0;
+    margin: 0;
+    color: #fff;
+    height: 400px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+section#what-do-i-get h2 {
+    color: #FFC627;
+}
+
+section#what-do-i-get div.section-footer {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+section#what-do-i-get p {
+    width: 42%;
+    margin: 0 auto;
+}
+
+section#what-do-i-get div.button-container {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 30px 0;
+    text-align: center;
+}
+
+
+div.product {
+    background-size: contain;
+    background-position: center center;
+}
+div.product img {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+div#control-panel {
+    background-image: url(../images/products/control-panel.png);
+}
+div#door-contact {
+    background-image: url(../images/products/door-window-contact.png);
+}
+div#recessed-door-contact {
+    background-image: url(../images/products/recessed-door-contact.png);
+}
+div#medical-pendant {
+    background-image: url(../images/products/medical-pendant.png);
+}
+div#key-fob {
+    background-image: url(../images/products/key-fob.png);
+}
+div#firefighter {
+    background-image: url(../images/products/firefighter.png);
+}
+div#doorbell {
+    background-image: url(../images/products/doorbell.png);
+}
+div#garage-door-receiver {
+    background-image: url(../images/products/garage-door-receiver.png);
+}
+div#light-bulb {
+    background-image: url(../images/products/light-bulb.png);
+}
+div#appliance-module {
+    background-image: url(../images/products/appliance-module.png);
+}
+div#dimmer {
+    background-image: url(../images/products/dimmer.png);
+}
+div#light-switch {
+    background-image: url(../images/products/light-switch.png);
+}
+div#motion-detector {
+    background-image: url(../images/products/motion-detector.png);
+}
+div#glass-break {
+    background-image: url(../images/products/glass-break-detector.png);
+}
+div#smoke-detector {
+    background-image: url(../images/products/smoke-detector.png);
+}
+div#co-detector {
+    background-image: url(../images/products/co-detector.png);
+}
+div#thermostat {
+    background-image: url(../images/products/thermostat.png);
+}
+div#security-camera {
+    background-image: url(../images/products/camera.png);
+}
+div#door-lock {
+    background-image: url(../images/products/door-lock.png);
+}
+
+
+
+@media screen and (max-width: 1023px) {
+    section#what-do-i-get p {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 767px) {
+    section#what-do-i-get p {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 599px) {
+}
+@media screen and (max-width: 479px) {
+    section#what-do-i-get p {
+        width: 95%;
+    }
+}

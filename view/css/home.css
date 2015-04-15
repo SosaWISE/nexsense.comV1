@@ -1,0 +1,139 @@
+section#hero {
+    background-image: url(../images/home/home1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    padding: 40px 0 0 0;
+    margin: 0;
+    color: #fff;
+    height: 600px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+section#hero div {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 80%;
+    margin-left: -40%;
+}
+section#hero h1 {
+    text-shadow: 1px 1px 3px #707170;
+    margin: 0 0 10px 0;
+}
+section#hero p {
+    width: 30%;
+    margin: 0 auto;
+    font-size: 18px;
+    text-shadow: 1px 1px 3px #707170;
+}
+
+/*
+section#hero > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-image: url(../images/home/home-line-art.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+div.hero-text {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: 80%;
+    margin-left: -40%;
+    padding-bottom: 120px;
+
+    background-image: url(../images/standard/text-shadow.png);
+    background-width: 75%;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+section#hero h1 {
+    text-transform: none;
+    font-size: 40px;
+    color: #FFC627;
+    margin: 0 0 10px 0;
+}
+section#hero p {
+    width: 30%;
+    margin: 0 auto;
+    font-size: 18px;
+}
+*/
+
+
+div#feature-columns {
+    margin-top: 40px;
+}
+
+div.columns {
+    display: table;
+}
+div.column-third {
+    display: table-cell;
+    width: 15%;
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+div#pricing-img, div#home-img, div#phone-img {
+    width: 116px;
+    height: 116px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 5px auto 5px auto;
+    padding: 0;
+}
+div#pricing-img {
+    background-image: url(../images/home/money-icon.png);
+}
+div#home-img {
+    background-image: url(../images/home/home-icon.png);
+}
+div#phone-img {
+    background-image: url(../images/home/phone-icon.png);
+}
+
+div#family-photo {
+    background-image: url(../images/home/family1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 0;
+    padding: 0;
+    height: 330px;
+    margin-bottom: 60px;
+}
+
+
+
+
+
+
+
+/*** media queries ***/
+
+@media screen and (max-width: 1223px) {
+    section#hero p {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 767px) {
+    section#hero p {
+        width: 75%;
+    }
+}
+
+

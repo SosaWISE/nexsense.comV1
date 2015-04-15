@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+        <script language="javascript" type="text/javascript" src="view/js/angular/angular.min.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/common-2.0.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/standard.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/standard.css" />
+
+        <!-- Editable head -->
+
+        <title>Nexsense Home Security Pricing</title>
+        <meta name="description" content="Nexsense home automation and security products give you the peace of mind you deserve.  Get a free home automation and security quote." />
+        <meta name="keywords" content="Nexsense, home security, alarm system, home automation, home management, home control, smart home" />
+        <script language="javascript" type="text/javascript" src="view/js/pricing.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/pricing.css" />
+
+        <!-- END Editable head -->
+
+    </head>
+    <body ng-app="MySite">
+        <div id="wrapper">
+            <header></header>
+            <!-- Body -->
+
+                <div ng-controller="PricingPage">
+                    <div class="sub-header">
+                        <div>
+                            <h1>Pricing</h1>
+                            <p>We’ve got nothing to hide.  Pick your own pricing for your security plan.</p>
+                        </div>
+                    </div>
+
+
+                    <div id="pricing-container">
+
+                        <div id="pricing-pages" ng-class="getPage()">
+                            <div class="pricing-page" id="page1">
+
+
+                                <section class="content">
+                                    <h2>Pick your price</h2>
+                                    <p>Look, we’ll make it easy.  Use the sliders below to choose your payment plan and a down payment and see what we can offer.  Scroll down to see details about what’s included in a Nexsense security system.</p>
+                                </section>
+
+
+
+
+                                <section id="pick-your-price">
+                                    <div id="price-table">
+                                        <div id="sliders">
+                                            <div class="price-widget">
+                                                <div class="label">Contract length <span class="label-value">{{contractLength}} months</span></div>
+                                                <input type="range" name="contractLength" ng-model="contractLength" min="0" max="60" step="12" />
+                                                <div class="range-labels footnote">
+                                                    <div class="min-label">No contract</div>
+                                                    <div class="max-label">60 months</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="label">Down payment <span class="label-value">${{getDownPayment()}}</span></div>
+                                            <input type="range" name="downPayment" ng-model="downPayment" min="0" max="600" step="100" />
+                                            <div class="range-labels footnote">
+                                                <div class="min-label">$0</div>
+                                                <div class="max-label">$599</div>
+                                            </div>
+                                        </div>
+                                        <div id="live-price">
+                                            <div class="price-widget">
+                                                <div class="label">Monthly payment</div>
+                                                <div class="payment">{{monthlyPayment | dollars}}<sup>{{monthlyPayment | cents}}</sup></div>
+                                                <div class="footnote">Monitoring and equipment.  {{contractString}}.</div>
+                                            </div>
+
+                                            <div class="label">Due today</div>
+                                            <div class="payment">{{dueToday | dollars}}<sup>{{dueToday | cents}}</sup></div>
+                                            <div class="footnote">Includes installation, activation, and down payment for an 8-point system.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="button-container">
+                                        <button ng-click="nextStep()">Continue <span class="chevron"></span></button>
+                                        <div class="footnote">You can choose your equipment during the next step.</div>
+                                    </div>
+                                </section>
+
+
+                                <div class="divider"></div>
+
+
+
+                                <section id="what-do-i-get">
+                                    <h2>Great, but what will I get with this system?</h2>
+                                    <div id="product-bg">
+                                        <p>
+                                            To simplify things we’ve assigned each of our products a point value.  We’ll include eight points of equipment in our standard installation.  You can always add more points for $35 each.  Take a look at our products section to learn about individual product point values.
+                                        </p>
+                                        <div id="product-shot"></div>
+                                    </div>
+                                    <div class="button-container">
+                                        <a href="products" class="button">View Products</a>
+                                    </div>
+                                </section>
+
+                                <div class="divider"></div>
+
+                                <section class="content">
+                                    <h2>Want to talk about it?</h2>
+                                    <p>
+                                        Give us a call.  We’d love to talk about our products and what's right for you.
+                                    </p>
+                                    <p class="phone-number">
+                                        866-205-5200
+                                    </p>
+                                </section>
+
+
+                            </div>
+                            <div class="pricing-page" id="page2">
+                                <section class="content">
+                                    <h2>Choose your equipment</h2>
+                                    <p>From door and window contacts to security cameras and smoke detectors, you can hand pick the system that’s right for your home.  You can add up to eight points of equipment for free.  If you need some advice, just give us a call - we’d be happy to talk you through it.</p>
+                                </section>
+
+
+                                <section id="choose-equipment">
+
+                                    Choose eight points of equipment for your home.
+
+                                    <div id="product-carousel">
+                                        <div id="product-left" ng-click="scrollLeft()"></div>
+                                        <div id="product-scroll">
+                                            <div id="product-container">
+                                                <div ng-repeat="prod in productList" class="product" ng-mouseover="hoverProduct(prod)" ng-mouseout="cancelHoverProduct(prod)">
+                                                    <img ng-src="view/images/products/{{prod.id}}.png" />
+                                                    <div class="product-desc">
+                                                        <div class="product-name">{{prod.name}}</div>
+                                                        <div class="product-value"><span ng-show="prod.points>0">{{prod.points}}<sub ng-show="prod.points==1">pt</sub><sub ng-show="prod.points>1">pts</sub></span><span ng-show="prod.points==0">-</span></div>
+                                                    </div>
+                                                    <div class="product-addtosystem" ng-show="prod.isHovered">
+                                                        Add this to your system
+                                                        <div>
+                                                            <div class="qty-minus" ng-click="updateQty(prod, -1)"></div>
+                                                            <div class="qty"><input type="text" ng-model="prod.qty" /></div>
+                                                            <div class="qty-plus" ng-click="updateQty(prod, 1)"></div>
+                                                            <div class="add-button">
+                                                                <button class="small" ng-click="addItemToSystem(prod)">Add</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="product-right" ng-click="scrollRight()"></div>
+                                    </div>
+
+
+                                    <div id="order-summary">
+                                        <div class="page2-system">
+                                            <div class="label">Your personalized system</div>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Item</th>
+                                                        <th class="number">Qty</th>
+                                                        <th class="number">Pts</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="item in orderItems">
+                                                        <td>{{item.name}}</td>
+                                                        <td class="number">{{item.qty}}</td>
+                                                        <td class="number"><span ng-show="item.points==0">-</span><span ng-show="item.points>0">{{item.points*item.qty}}</span></td>
+                                                        <td><span class="fakelink" ng-show="item.canRemove" ng-click="removeItemFromSystem(item)">x</span></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td>Total</td>
+                                                        <td></td>
+                                                        <td class="number"><span ng-show="totalPoints==0">-</span><span ng-show="totalPoints>0">{{totalPoints}}</span></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr id="upgrade-row">
+                                                        <td>$35 per point above 8</td>
+                                                        <td></td>
+                                                        <td class="number"><span ng-show="upgradeCost==0">-</span><span ng-show="upgradeCost>0">{{upgradeCost | currency}}</span></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <div class="page2-payment">
+                                            <div class="label">Monthly payment</div>
+                                            <div class="payment">{{monthlyPayment | dollars}}<sup>{{monthlyPayment | cents}}</sup></div>
+                                            <div class="footnote">Monitoring and equipment.  {{contractString}}.</div>
+                                        </div>
+                                        <div class="page2-duetoday">
+                                            <div class="label">Due today</div>
+                                            <div class="payment">{{dueToday+upgradeCost | dollars}}<sup>{{dueToday+upgradeCost | cents}}</sup></div>
+                                            <div class="footnote">Includes installation, activation, and down payment for an 8-point system.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="button-container">
+                                        <button ng-click="previousStep()"><span class="reverse-chevron"></span> Back</button>
+                                        <button ng-click="nextStep()">Continue <span class="chevron"></span></button>
+                                        <div><span class="skipstep" ng-click="nextStep()">Skip this step</span></div>
+                                    </div>
+                                </section>
+
+
+                                <div class="divider"></div>
+
+                                <section class="content">
+                                    <h2>Want to talk about it?</h2>
+                                    <p>
+                                        Give us a call.  We’d love to talk about our products and what's right for you.
+                                    </p>
+                                    <p class="phone-number">
+                                        866-205-5200
+                                    </p>
+                                </section>
+
+                            </div>
+                            <div class="pricing-page" id="page3">
+                                <section class="content">
+                                    <h2>Schedule your installation</h2>
+                                    <p>That’s it.  You’re all ready to have your personalized home security system installed.  Just give us a few contact details and we’ll get in touch right away to answer any questions and schedule your installation.</p>
+                                </section>
+
+                                <section>
+                                    <form name="apptForm">
+                                        <div class="columns">
+                                            <div class="column half">
+                                                <input type="text" name="firstName" ng-model="customer.firstName" ng-class="{warning:(apptForm.firstName.$invalid && (apptForm.firstName.$dirty || submitAttempted))}" placeholder="First name" required/>
+                                                <input type="text" name="lastName" ng-model="customer.lastName" ng-class="{warning:(apptForm.lastName.$invalid && (apptForm.lastName.$dirty || submitAttempted))}" placeholder="Last name" required/>
+                                            </div>
+                                            <div class="column half">
+                                                <input type="text" name="phone" ng-model="customer.phone" ng-pattern="validation.phone" ng-class="{warning:(apptForm.phone.$invalid && (apptForm.phone.$dirty || submitAttempted))}" placeholder="Phone" required/>
+                                                <input type="text" name="email" ng-model="customer.email" ng-pattern="validation.email" ng-class="{warning:(apptForm.email.$invalid && (apptForm.email.$dirty || submitAttempted))}" placeholder="Email"/>
+                                                <input type="text" name="zip" ng-model="customer.zip" ng-pattern="validation.zip" ng-class="{warning:(apptForm.zip.$invalid && (apptForm.zip.$dirty || submitAttempted))}" placeholder="zip code" required/>
+                                            </div>
+                                        </div>
+                                        <div class="button-container">
+                                            <button ng-click="previousStep()"><span class="reverse-chevron"></span> Back</button>
+                                            <button ng-click="submitForm()" ng-show="!isSubmitting">Submit</button>
+                                            <div id="form-wait" ng-show="isSubmitting"></div>
+                                            <div class="footnote">
+                                                By submitting this information, you are NOT committing to purchase a home security system, only to allow Nexsense to contact you to discuss your order.
+                                            </div>
+                                        </div>
+                                    </form>
+                                </section>
+
+
+                                <section id="order-review">
+                                    <div class="bg-stripe">
+                                        <div class="shadow-box-container">
+                                            <div class="shadow-box">
+                                                <div class="shadow-top"></div>
+
+                                                <div class="page2-system">
+                                                    <div class="label">Your personalized system</div>
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Item</th>
+                                                                <th class="number">Qty</th>
+                                                                <th class="number">Pts</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="item in orderItems">
+                                                                <td>{{item.name}}</td>
+                                                                <td class="number">{{item.qty}}</td>
+                                                                <td class="number"><span ng-show="item.points==0">-</span><span ng-show="item.points>0">{{item.points*item.qty}}</span></td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <td>Total</td>
+                                                                <td></td>
+                                                                <td class="number"><span ng-show="totalPoints==0">-</span><span ng-show="totalPoints>0">{{totalPoints}}</span></td>
+                                                            </tr>
+                                                            <tr id="upgrade-row">
+                                                                <td>$35 per point above 8</td>
+                                                                <td></td>
+                                                                <td class="number"><span ng-show="upgradeCost==0">-</span><span ng-show="upgradeCost>0">{{upgradeCost | currency}}</span></td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+                                                <div class="page2-payment">
+                                                    <div class="label">Monthly payment</div>
+                                                    <div class="payment">{{monthlyPayment | dollars}}<sup>{{monthlyPayment | cents}}</sup></div>
+                                                    <div class="footnote">Monitoring and equipment.  {{contractString}}.</div>
+                                                </div>
+                                                <div class="page2-duetoday">
+                                                    <div class="label">Due today</div>
+                                                    <div class="payment">{{dueToday+upgradeCost | dollars}}<sup>{{dueToday+upgradeCost | cents}}</sup></div>
+                                                    <div class="footnote">Includes installation, activation, and down payment for an 8-point system.</div>
+                                                </div>
+
+
+                                                <div class="shadow-bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="content">
+                                    <h2>Want to talk about it?</h2>
+                                    <p>
+                                        Give us a call.  We’d love to talk about our products and what's right for you.
+                                    </p>
+                                    <p class="phone-number">
+                                        385-375-8120
+                                    </p>
+                                </section>
+
+                            </div>
+                            <div class="pricing-page" id="page4">
+                                <section class="content">
+                                    <h2>Thanks!</h2>
+                                    <p>We’ll have one of our experts give you a call in the next few minutes to answer any questions you might have and schedule an installation if you’re ready.</p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            <!-- END Body -->
+        </div>
+        <footer></footer>
+    </body>
+</html>            

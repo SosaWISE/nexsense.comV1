@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+        <script language="javascript" type="text/javascript" src="view/js/angular/angular.min.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/common-1.3.0.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/standard.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/standard.css" />
+
+        <!-- Editable head -->
+
+        <title>Nexsense Home Security</title>
+        <meta name="description" content="Nexsense home automation and security products give you the peace of mind you deserve.  Get a free home automation and security quote." />
+        <meta name="keywords" content="Nexsense, home security, alarm system, home automation, home management, home control, smart home" />
+        <script language="javascript" type="text/javascript" src="view/js/products.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/products.css" />
+
+        <!-- END Editable head -->
+
+    </head>
+    <body ng-app="MySite">
+        <div id="wrapper">
+            <header></header>
+            <!-- Body -->
+
+                <div ng-controller="ProductsPage">
+                    <div class="sub-header">
+                        <div>
+                            <h1>Products</h1>
+                            <p>See what we have to offer you and your home.</p>
+                        </div>
+                    </div>
+
+                    <section class="content">
+                        <h2>Browse our products</h2>
+                        <p>From door and window contacts to security cameras and smoke alarms, your Nexsense home security system is sure to meet your unique needs.</p>
+                        <p class="paragraph-break">When you have a Nexsense home security system installed, we'll include eight points of equipment at no additional charge.  You'll be able to choose from the items listed below.  Each product's point value is listed here for your convenience.</p>
+                    </section>
+
+                    <section id="product-grid">
+                        <div>
+                            <div ng-repeat="prod in productList" class="product" ng-click="$site.navigateTo('/product/'+prod.id)">
+                                <img ng-src="view/images/products/{{prod.id}}.png" />
+                                <div class="product-desc">
+                                    <div class="product-name">{{prod.name}}</div>
+                                    <div class="product-value"><span ng-show="prod.points>0">{{prod.points}}<sub ng-show="prod.points==1">pt</sub><sub ng-show="prod.points>1">pts</sub></span><span ng-show="prod.points==0">-</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="what-do-i-get">
+                        <h2>What will I get with my new system?</h2>
+                        <p>
+                            When you purchase a home security system from Nexsense you’ll get eight points of equipment included.  Each product’s point value is listed in the grid above. 
+                        </p>
+                        <div class="button-container">
+                            <a href="pricing" class="button secondary">Pricing &amp; Details</a>
+                        </div>
+                    </section>
+
+                    <section class="content">
+                        <h2>Want to talk about it?</h2>
+                        <p>
+                            Give us a call.  We’d love to talk about our products and what's right for you.
+                        </p>
+                        <p class="phone-number">
+                            866-205-5200
+                        </p>
+                    </section>
+
+                </div>
+
+            <!-- END Body -->
+        </div>
+        <footer></footer>
+    </body>
+</html>            

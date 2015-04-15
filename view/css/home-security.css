@@ -1,0 +1,74 @@
+section#hero {
+    background-image: url(../images/home-security/family2.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    padding: 40px 0 0 0;
+    margin: 0;
+    color: #fff;
+    height: 600px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+section#home-illustration {
+    background-color: #62259D;
+    background-image: url(../images/home-security/home-illustration-bg.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    padding: 40px 0 0 0;
+    margin: 0;
+    color: #fff;
+    height: 600px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+section#home-illustration h2 {
+    color: #FFC627;
+}
+
+section#home-illustration div.section-footer {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+section#home-illustration p {
+    width: 42%;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 1023px) {
+    section#home-illustration p {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 767px) {
+    section#home-illustration p {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 479px) {
+    section#home-illustration p {
+        width: 95%;
+        font-size: 13px;
+    }
+}

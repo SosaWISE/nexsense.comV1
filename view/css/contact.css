@@ -1,0 +1,31 @@
+div.columns {
+    display: table;
+}
+div.column-third {
+    display: table-cell;
+    width: 15%;
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+
+div#message-form {
+	width: 50%;
+	margin: 30px auto;
+}
+div#message-form > div {
+	width: 100%;
+	text-align: left;
+}
+div#message-form input[type=text], div#message-form textarea {
+	width: 100%;
+	margin: 5px 0;
+	text-align: left;
+}
+div#message-form > div.button-container {
+	text-align: center;
+}
+
+textarea {
+	height: 150px;
+}

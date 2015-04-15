@@ -1,0 +1,152 @@
+div.content {
+	margin-bottom: 60px;
+}
+
+section#careers-hero {
+	padding: 20px 20px 30px 20px;
+	height: 500px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background-image: url(../images/careers/group-portrait.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom: 3px solid #FFC627;
+}
+
+section#careers-hero > div {
+	max-width: 1000px;
+	margin: 0 auto;
+	text-align: left;
+}
+section#careers-hero h1 {
+	color: #62259D;
+	margin: 2px 0;
+}
+section#careers-hero p {
+	margin-top: 0;
+	padding: 0;
+	max-width: 65%;
+}
+
+
+div.container {
+	text-align: left;
+	max-width: 70%;
+	margin: 0 auto;
+}
+
+
+
+h2 {
+	color: #5a2a82;
+	font-size: 26px;
+	margin-bottom: 4px;
+}
+h2.toggle {
+	cursor: pointer;
+}
+
+h3 {
+	color: #AFB3B2;
+	font-size: 18px;
+	margin-bottom: 3px;
+}
+
+
+div.job {
+	margin: 20px 0 40px 0;
+}
+h2.job-title {
+	display: inline;
+}
+span.job-location {
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #FFC52F;
+	padding-left: 5px;
+}
+div.job-description {
+}
+div.full-job-description {
+	margin-top: 20px;
+}
+
+
+ul {
+	display: block;
+	margin-left: 40px;
+	padding: 0;
+}
+li {
+	border: none;
+	list-style-type: disc;
+}
+
+div.button-container {
+	margin: 20px 0 10px 0;
+	text-align: center;
+}
+
+div.complement-divider {
+	height: 10px;
+	background-image: url(../images/standard/yellow-stripe.png);
+	background-position: top left;
+	background-repeat: repeat-x;
+}
+
+div.flex-row {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	margin: 0;
+	padding: 0;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: stretch;
+    -moz-align-items: stretch;
+    -ms-align-items: stretch;
+    align-items: stretch;
+}
+div.flex-row > div {
+	flex: 1 1 50%;
+	-webkit-flex: 1 1 50%;
+	-moz-flex: 1 1 50%;
+	-ms-flex: 1 1 50%;
+}
+
+div.flex-row > div:first-child {
+	margin: 0 20px 0 15%;
+}
+div.flex-row > div:last-child {
+	margin: 0 15% 0 20px;
+}
+
+@media (max-width: 990px) {
+
+}
+
+@media (max-width: 768px) {
+	section#careers-hero p {
+		max-width: 90%;
+	}
+}
+
+@media (max-width: 568px) {
+	section h2 {
+		font-size: 22px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	div.container {
+		text-align: left;
+		max-width: 90%;
+		margin: 0 auto;
+	}
+}

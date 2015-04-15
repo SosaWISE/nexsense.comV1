@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+        <script language="javascript" type="text/javascript" src="view/js/angular/angular.min.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/common-1.3.0.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/standard.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/standard.css" />
+
+        <!-- Editable head -->
+
+        <title>Nexsense Customer Support</title>
+        <meta name="description" content="Nexsense home automation and security products give you the peace of mind you deserve.  Get a free home automation and security quote." />
+        <meta name="keywords" content="Nexsense, home security, alarm system, home automation, home management, home control, smart home, customer support, customer service, warranty" />
+        <script language="javascript" type="text/javascript" src="view/js/support.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/support.css" />
+
+        <!-- END Editable head -->
+
+    </head>
+    <body ng-app="MySite">
+        <div id="wrapper">
+            <header></header>
+            <!-- Body -->
+
+                <div ng-controller="SupportPage">
+                    <div class="sub-header">
+                        <div>
+                            <h1>Customer Support</h1>
+                            <p>Let us help you find the right solution</p>
+                        </div>
+                    </div>
+
+                    <section class="content">
+                        <h2>Frequently asked questions</h2>
+                        <p>Here are a few of the more common questions we receive.  Browse through them and let us know if your question isn’t answered here.</p>
+                    </section>
+                    <section id="faq">
+                        <div ng-repeat="faq in faqList" class="faq-box">
+                            <div class="faq-question" ng-bind-html="faq.question"></div>
+                            <div class="faq-answer" ng-bind-html="faq.answer"></div>
+                        </div>
+                    </section>
+                   <div class="divider"></div>
+
+                    <section class="content">
+                        <h2>Warranty</h2>
+                        <p>
+                            Protecting your home is only as good as the assurance it brings and the ease of use it provides. Combining advanced technology with easy-to-install, user-friendly components is just the beginning to our commitment to serving you.
+                        </p>
+                    </section>
+                    <section id="warranty">
+                        <div class="faq-box">
+                            <div class="faq-question">Lifetime maintenance warranty</div>
+                            <div class="faq-answer">
+                                You shouldn’t have to worry about repair and maintenance services. That’s why we take care of them for you free during your first six months. A trip fee of $30 per visit will be charged after that.
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-question">Lifetime equipment warranty</div>
+                            <div class="faq-answer">
+                                We offer a product you can depend on, and we back it up with a lifetime equipment warranty, repairing or replacing any defective equipment we install—free of charge.
+                            </div>
+                        </div>
+                        <div class="faq-box">
+                            <div class="faq-question">Lifetime move warranty</div>
+                            <div class="faq-answer">
+                                On the move? Nexsense customers who are in good standing and moving to an area we service are eligible to receive a new 8-point system for their new home. Just give us a call at 385.375.8130 or email us at support@nexsense.com 30 days prior to your move.
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <div class="divider"></div>
+
+
+                    <section class="content">
+                        <h2>Need to talk to someone?</h2>
+                        <p>
+                            Give us a call.  We’d love to talk about our products and what's right for you.
+                        </p>
+                        <p class="phone-number">
+                            866-205-5200
+                        </p>
+                    </section>
+
+
+                </div>
+
+            <!-- END Body -->
+        </div>
+        <footer></footer>
+    </body>
+</html>            

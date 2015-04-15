@@ -1,0 +1,123 @@
+
+section#home-automation {
+    background-color: #62259D;
+    background-image: url(../images/home-automation/automation-diagram.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    padding: 40px 0 0 0;
+    margin: 0;
+    color: #fff;
+    height: 600px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+section#home-automation h2 {
+    color: #FFC627;
+}
+
+section#home-automation div.section-footer {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+section#home-automation p {
+    width: 42%;
+    margin: 0 auto;
+}
+
+
+section#hero {
+    background-image: url(../images/home-automation/control-home-with-phone.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    padding: 40px 0 0 0;
+    margin: 0;
+    color: #fff;
+    height: 700px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+
+section#hero > div {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 20% 0 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+section#hero p {
+    color: #62259D;
+}
+
+
+
+
+
+@media screen and (min-width: 1920px) {
+    section#hero {
+        background-position: center bottom;
+    }
+}
+@media screen and (max-width: 1023px) {
+    section#hero {
+        background-height: 100%;
+        background-position: right center;
+    }
+    section#hero > div {
+        max-width: 85%;
+        padding-right: 50%;
+    }
+    section#home-automation p {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 767px) {
+    section#home-automation p {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 599px) {
+    section#hero > div {
+        position: absolute;
+        bottom: 0;
+        max-width: 100%;
+        padding: 0 15% 15px 15%;
+        color: #fff;
+        text-align: center;
+    }
+    section#hero h2 {
+        color: #fff;
+        text-shadow: 1px 1px 3px #707170;
+    }
+    section#hero p {
+        color: #fff;
+        text-shadow: 1px 1px 3px #707170;
+    }
+}
+@media screen and (max-width: 479px) {
+    section#home-automation p {
+        width: 95%;
+        font-size: 13px;
+    }
+}

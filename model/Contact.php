@@ -17,7 +17,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
         }
-        $emailto = 'jjenne@nexsense.com, dfreitas@nexsense.com';
+        $emailto = 'eolson@nexsense.com';
         $subject = "Nexsense.com Installation Request";
 
         // prepare email body text
@@ -53,23 +53,27 @@ class Contact {
 
 
     /*** Sends a message from a contact form ***/
-    static function send_message($name, $email, $department, $message, $age) {
-        switch($email) {
+//    static function send_message($name, $email, $department, $message, $age) {
+    static function send_message($name, $email, $message) {
+ /*       switch($email) {
             case 'sales':
-                $emailto = 'sales@nexsense.com, dfreitas@nexsense.com, bcarter@nexsense.com';
+                $emailto = 'b2b@nexsense.com';
                 break;
             case 'billing':
-                $emailto = 'billing@nexsense.com, bcarter@nexsense.com';
+                $emailto = 'billing@nexsense.com';
                 break;
-            case 'advertising':
-                $emailto = 'jjenne@nexsense.com';
+            case 'b2b':
+                $emailto = 'b2b@nexsense.com';
                 break;
             case 'support':
             default:
                 $emailto = 'support@nexsense.com';
                 break;
         }
-
+*/
+        $emailto = 'b2b@nexsense.com';
+        $department = 'Affiliate Sales';
+        $subject = "b2b.Nexsense.com Contact Form";
 
         $headers .= "Organization: Nexsense" . "\r\n";
         $headers .= "MIME-Version: 1.0" . "\r\n";
@@ -79,14 +83,13 @@ class Contact {
         $headers .= "From: no-reply@nexsense.com" . "\r\n";
         $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
 
-        $subject = "Nexsense.com Contact Form";
 
         $errors = false;
 
-        // honeypot
+/*        // honeypot
         if (!empty($age))
             $errors = true;
-
+*/
         // name
         if (!empty($name))
             $name = trim($name);
@@ -135,7 +138,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
 
-            $emailto = 'jjenne@nexsense.com';
+            $emailto = 'eolson@nexsense.com';
             $subject = "New referral from nexsense.com";
 
 
@@ -198,7 +201,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
 
-            $emailto = 'directsales@nexsense.com, bneiser@nexsense.com, jjenne@nexsense.com';
+            $emailto = 'eolson@nexsense.com';
             $subject = "Sales Rep Application from Nexsense.com";
 
             $body = '';
@@ -210,10 +213,10 @@ class Contact {
 
             if (strtoupper($office) == 'FL-TAMPA') {
                 $body .= "H,\r\n\r\n";
-                $emailto .= ", htravlee@nexsense.com";
+                $emailto .= ", eolson@nexsense.com";
             }
             else
-                $body .= "Hey Ben,\r\n\r\n";
+                $body .= "Hey Erik,\r\n\r\n";
 
             if ($position == 'sales-mgr')
                 $body .= "You've received another application for a sales manager position from Nexsense.com.\r\n\r\n";

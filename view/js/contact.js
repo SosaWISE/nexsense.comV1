@@ -4,16 +4,16 @@ app.controller("ContactPage", ['$scope', '$http', 'Site', 'Messaging', 'FormVali
     $scope.validation = validation;
 
     $scope.departmentList = [
-    	{ name:'Billing', email:'billing' },
-    	{ name:'Sales', email:'sales' },
-    	{ name:'Customer service and Technical support', email:'support' },
-    	{ name:'Affiliate and advertising programs', email:'advertising' },
+  //  	{ name:'Billing', email:'billing' },
+  //  	{ name:'Sales', email:'sales' },
+  //  	{ name:'Customer service and Technical support', email:'support' },
+    	{ name:'Affiliate and B2B Sales', email:'b2b' },
     ];
 
     $scope.message = {
     	name: '',
     	email: '',
-    	department: 'support',
+    	department: 'b2b',
     	message: '',
     };
 
@@ -21,7 +21,7 @@ app.controller("ContactPage", ['$scope', '$http', 'Site', 'Messaging', 'FormVali
     $scope.resetvars = function() {
     	$scope.message.name = '';
     	$scope.message.email = '';
-    	$scope.department = 'support';
+    	$scope.department = 'b2b';
     	$scope.message = '';
 		$scope.submitAttempted = false;
     }
@@ -48,8 +48,7 @@ app.controller("ContactPage", ['$scope', '$http', 'Site', 'Messaging', 'FormVali
                 department: $scope.message.department,
                 message: $scope.message.message,
             }
-        }).
-        success(function(data, status, headers, config) {
+        }).success(function(data, status, headers, config) {
             $scope.isSubmitting = false;
             console.log(data);
             $msg.displayMessage("Your message was successfully sent to Nexsense.  We'll get back to you as soon as we can!");

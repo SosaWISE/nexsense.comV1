@@ -17,7 +17,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
         }
-        $emailto = 'jjenne@nexsense.com, dfreitas@nexsense.com';
+        $emailto = 'bmcfadden@nexsense.com, dfreitas@nexsense.com';
         $subject = "Nexsense.com Installation Request";
 
         // prepare email body text
@@ -54,19 +54,19 @@ class Contact {
 
     /*** Sends a message from a contact form ***/
     static function send_message($name, $email, $department, $message, $age) {
-        switch($email) {
+        switch($department) {
             case 'sales':
-                $emailto = 'sales@nexsense.com, dfreitas@nexsense.com, bcarter@nexsense.com';
+                $emailto = 'bmcfadden@nexsense.com';
                 break;
             case 'billing':
-                $emailto = 'billing@nexsense.com, bcarter@nexsense.com';
+                $emailto = 'bmcfadden@nexsense.com';
                 break;
             case 'advertising':
-                $emailto = 'jjenne@nexsense.com';
+                $emailto = 'bmcfadden@nexsense.com';
                 break;
             case 'support':
             default:
-                $emailto = 'support@nexsense.com';
+                $emailto = 'bmcfadden@nexsense.com';
                 break;
         }
 
@@ -135,7 +135,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
 
-            $emailto = 'jjenne@nexsense.com';
+            $emailto = 'bmcfadden@nexsense.com';
             $subject = "New referral from nexsense.com";
 
 
@@ -198,7 +198,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
 
-            $emailto = 'directsales@nexsense.com, bneiser@nexsense.com, jjenne@nexsense.com';
+            $emailto = 'bmcfadden@nexsense.com';
             $subject = "Sales Rep Application from Nexsense.com";
 
             $body = '';

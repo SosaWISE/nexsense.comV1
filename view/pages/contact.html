@@ -40,13 +40,12 @@
                             722 E Technology Ave<br/>
                             Suite 1100, Building E<br/>
                             Orem, UT 84097<br/>
-                            385-375-8135<br/>
-                            B2B@nexsense.com<br/>
+                            866-209-5200<br/>
                         </p>
                     </section>
 
                     <div class="divider"></div>
-<!--
+
                     <section class="content">
                         <div class="columns">
                             <div class="column-third">
@@ -72,24 +71,26 @@
                             </div>
                         </div>
                     </section>
--->
+
+
                     <section class="content">
                         <h2>Send us a message</h2>
-                        <p>We’d love to hear from you.  Fill out the form below and we’ll make sure your message gets to B2B Sales.</p>
+                        <p>We’d love to hear from you.  Fill out the form below and we’ll make sure your message gets sent to the right person.</p>
 
                         <form name="messageForm" onsubmit="return false;">
                             <div id="message-form">
                                 <div>
-                                    <input type="text" name="name" ng-model="message.name" ng-class="{warning:(messageForm.name.$invalid && (messageForm.name.$dirty || submitAttempted))}" placeholder="Name" required />
+                                    <input type="text" name="myname" ng-model="message.myname" ng-class="{warning:(messageForm.name.$invalid && (messageForm.name.$dirty || submitAttempted))}" placeholder="Name" required />
                                 </div>
                                 <div>
                                     <input type="text" name="email" ng-model="message.email" ng-pattern="validation.email" ng-class="{warning:(messageForm.email.$invalid && (messageForm.email.$dirty || submitAttempted))}" placeholder="Email" required />
                                 </div>
-<!--                                 <div>
+<!--                                <div>
                                     <div class="footnote">Choose a department to contact</div>
                                     <select name="department" ng-model="message.department" required ng-options="d.email as d.name for d in departmentList" />
                                 </div>
--->                                <div>
+ -->
+                                <div>
                                     <textarea name="message" ng-model="message.message" ng-class="{warning:(messageForm.message.$invalid && (messageForm.message.$dirty || submitAttempted))}" required placeholder="Message"></textarea>
                                 </div>
                                 <div class="button-container">
@@ -100,8 +101,6 @@
                             <input type="text" name="age" style="display: none;" />
                         </form>
                     </section>
-
-
                 </div>
 
             <!-- END Body -->

@@ -1,6 +1,9 @@
 <?php
 class Contact {
 
+    /********************************
+    ***  schedule_installation()  ***
+    *********************************/
     /*** Sends a message to Inside Sales from a contact form ***/
 	static function schedule_installation($firstname, $lastname, $email, $phone, $zip, $equipmentlist, $contractlength, $downpayment, $monthlypayment, $duetoday) {
 
@@ -17,7 +20,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
         }
-        $emailto = 'eolson@nexsense.com';
+        $emailto = 'bmcfadden@nexsense.com, dfreitas@nexsense.com';
         $subject = "Nexsense.com Installation Request";
 
         // prepare email body text
@@ -50,46 +53,38 @@ class Contact {
         return $success;
 	}
 
-
-
+    /************************
+    ***  send_message ()  ***
+    *************************/
     /*** Sends a message from a contact form ***/
 //    static function send_message($name, $email, $department, $message, $age) {
     static function send_message($name, $email, $message) {
- /*       switch($email) {
+/*
+        switch($department) {
             case 'sales':
-                $emailto = 'b2b@nexsense.com';
+                $emailto = 'bmcfadden@nexsense.com';
                 break;
             case 'billing':
-                $emailto = 'billing@nexsense.com';
+                $emailto = 'bmcfadden@nexsense.com';
                 break;
-            case 'b2b':
-                $emailto = 'b2b@nexsense.com';
+            case 'advertising':
+                $emailto = 'bmcfadden@nexsense.com';
                 break;
             case 'support':
             default:
-                $emailto = 'support@nexsense.com';
+                $emailto = 'bmcfadden@nexsense.com';
                 break;
         }
 */
-        $emailto = 'b2b@nexsense.com';
-        $department = 'Affiliate Sales';
-        $subject = "b2b.Nexsense.com Contact Form";
-
-        $headers .= "Organization: Nexsense" . "\r\n";
-        $headers .= "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type: text/plain; charset=iso-8859-1" . "\r\n";
-        $headers .= "X-Priority: 3" . "\r\n";
-        $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
-        $headers .= "From: no-reply@nexsense.com" . "\r\n";
-        $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
-
+        $emailto = 'bmcfadden@nexsense.com';
+        $subject = "Nexsense.com Contact Form";
 
         $errors = false;
 
-/*        // honeypot
-        if (!empty($age))
-            $errors = true;
-*/
+        // honeypot
+//        if (!empty($age))
+//            $errors = true;
+
         // name
         if (!empty($name))
             $name = trim($name);
@@ -102,6 +97,7 @@ class Contact {
         else
             $errors = true;
 
+        // body
         if (!$errors) {
 
             // prepare email body text
@@ -119,16 +115,25 @@ class Contact {
             $body .= $message;
             $body .= "\n";
             
+        // headers
+        $headers .= "Organization: Nexsense" . "\r\n";
+        $headers .= "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type: text/plain; charset=iso-8859-1" . "\r\n";
+        $headers .= "X-Priority: 3" . "\r\n";
+        $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
+        $headers .= "From: no-reply@nexsense.com" . "\r\n";
+        $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
+
             // send email 
             $success = mail($emailto, $subject, $body, $headers);
             return $success;
         }
-
         return false;
-
     }
 
-
+    /**************************
+    ***  submit_referral()  ***
+    ***************************/
     /*** Sends a referral to the sales team ***/
     static function submit_referral($referrer, $referral) {
         try {
@@ -138,7 +143,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
 
-            $emailto = 'eolson@nexsense.com';
+            $emailto = 'bmcfadden@nexsense.com';
             $subject = "New referral from nexsense.com";
 
 
@@ -185,7 +190,9 @@ class Contact {
         return $response;
     }    
 
-
+    /*****************************
+    ***  submit_application()  ***
+    ******************************/
     /*** Sends an application for a sales position ***/
     static function submit_application($firstName, $lastName, $email, $phone, $resume, $zip, $sellYourself, $position, $office, $workHistory, $salesExperience) {
 
@@ -201,7 +208,7 @@ class Contact {
             $headers .= "From: no-reply@nexsense.com" . "\r\n";
             $headers .= "Reply-To: no-reply@nexsense.com" . "\r\n";
 
-            $emailto = 'eolson@nexsense.com';
+            $emailto = 'bmcfadden@nexsense.com';
             $subject = "Sales Rep Application from Nexsense.com";
 
             $body = '';
@@ -213,10 +220,10 @@ class Contact {
 
             if (strtoupper($office) == 'FL-TAMPA') {
                 $body .= "H,\r\n\r\n";
-                $emailto .= ", eolson@nexsense.com";
+                $emailto .= ", htravlee@nexsense.com";
             }
             else
-                $body .= "Hey Erik,\r\n\r\n";
+                $body .= "Hey Ben,\r\n\r\n";
 
             if ($position == 'sales-mgr')
                 $body .= "You've received another application for a sales manager position from Nexsense.com.\r\n\r\n";

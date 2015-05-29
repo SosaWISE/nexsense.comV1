@@ -4,6 +4,8 @@
 		<div id="menu-icon" ng-click="toggleMenu()"></div>
 		<div id="header-logo" ng-click="$site.navigateTo('/home');"></div>
 		<div id="header-nav" ng-show="getMenuIsDisplayed()">
+			<div class="nav-link"><a class="nav-link" href="/home-security">Home Security</a> <div class="menu-indicator" ng-show="$site.pageName=='home-security'"></div></div>
+			<div class="nav-link"><a class="nav-link" href="/home-automation">Home Automation</a> <div class="menu-indicator" ng-show="$site.pageName=='home-automation'"></div></div>
 			<div class="nav-link"><a class="nav-link" href="/products">Products</a> <div class="menu-indicator" ng-show="$site.pageName=='products'"></div></div>
 			<div class="nav-link"><a class="nav-link" href="/pricing">Pricing</a> <div class="menu-indicator" ng-show="$site.pageName=='pricing'"></div></div>
 			<div class="nav-link"><a class="nav-link" href="/support">Support</a> <div class="menu-indicator" ng-show="$site.pageName=='support'"></div></div>

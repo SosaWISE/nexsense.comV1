@@ -87,7 +87,13 @@ div.column-third {
     padding: 0 20px;
 }
 
-div#pricing-img, div#home-img, div#phone-img {
+
+/*
+	added house-img, case-img, calc-img
+	louis, 01 june 2015
+
+*/
+div#pricing-img, div#home-img, div#phone-img, div#house-img, div#case-img, div#calc-img {
     width: 116px;
     height: 116px;
     background-position: center center;
@@ -96,6 +102,20 @@ div#pricing-img, div#home-img, div#phone-img {
     margin: 5px auto 5px auto;
     padding: 0;
 }
+
+div#house-img {
+    background-image: url(../images/home/house_icon.png);
+}
+
+div#case-img {
+    background-image: url(../images/home/case_icon.png);
+}
+
+div#calc-img {
+    background-image: url(../images/home/calculator.png);
+}
+
+
 div#pricing-img {
     background-image: url(../images/home/money-icon.png);
 }

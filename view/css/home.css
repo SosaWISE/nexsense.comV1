@@ -33,6 +33,21 @@ section#hero p {
     text-shadow: 1px 1px 3px #707170;
 }
 
+/* adding an image map link to the Utah Valley Home Builders Assoc
+logo on the bacground image. */
+#uvhba_link {
+
+	position: absolute;
+	top: 1340px;
+	left: 357px;
+	width: 141px;
+	height: 141px;
+	background-color: transparent;
+	border: 1px solid yellow;
+
+}
+
+
 /*
 section#hero > div {
     position: relative;

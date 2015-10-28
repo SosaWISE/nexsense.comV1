@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui" />
+
+        <script language="javascript" type="text/javascript" src="view/js/angular/angular.min.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/common-1.3.0.js"></script>
+        <script language="javascript" type="text/javascript" src="view/js/standard.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/standard.css" />
+
+        <!-- Editable head -->
+
+        <title>Nexsense Home Security</title>
+        <meta name="description" content="Work at Nexsense, a pioneer in customer-friendly home security services." />
+        <meta name="keywords" content="Nexsense, home security, alarm system, home automation, home management, home control, smart home" />
+        <script language="javascript" type="text/javascript" src="view/js/sell-for-nexsense.js"></script>
+        <link rel="stylesheet" type="text/css" href="view/css/sell-for-nexsense.css" />
+
+        <!-- END Editable head -->
+
+    </head>
+    <body ng-app="MySite">
+        <div id="wrapper">
+            <header></header>
+            <!-- Body -->
+
+                <div ng-controller="SellForNexsensePage">
+
+
+                    <section class="content">
+                        <h2>Now hiring lean, mean selling machines.</h2>
+                        <h4 ng-show="salesArea!=''">{{salesArea}}</h4>
+                        <p>Candidates must also be laid-back, self-starting, and gung-ho about changing the way people think about home automation and security.</p>
+                    </section>
+
+
+                    <section>
+						<div class="columns">
+							<div class="column">
+								<h3>Essential Duties and Responsibilities</h3>
+								<ul>
+									<li>Must love people and feel comfortable interacting with them on a personable level.</li>
+									<li>Responsible for going door to door in order to educate customers and sell products and services.</li>
+									<li>Help build a family environment by participating in team activities and recruiting events.</li>
+									<li>Represent Nexsense with transparency and professionalism.</li>
+									<li>Other duties as assigned, including participating in our work hard, play hard culture.</li>
+									<li>Reports directly to the Outside Sales Director.</li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3>Qualifications</h3>
+								<ul>
+									<li>A college degree is preferred but not required.</li>
+									<li>Previous experience selling products door to door is preferred.</li>
+									<li>Must have solid communication and interpersonal skills.</li>
+									<li>Computer proficiency in Windows environment. </li>
+									<li>Strong attention to detail, dependability and follow through.</li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3>Physical Demands</h3>
+								<ul>
+									<li>Ability to withstand many different weather conditions.</li>
+									<li>Hearing, vision and speaking within normal ranges.</li>
+									<li>No heavy lifting is expected. Exertion of up to 10 lbs. of force occasionally may be required.</li>
+									<li>Good manual dexterity for the use of common office equipment such as computer terminals, calculator, copiers, and FAX machines. </li>
+								</ul>
+							</div>
+							<div class="column">
+								<h3>Work Environment</h3>
+								Our Outside Sales Reps work outdoors going door to door in order to help promote peace of mind and happiness by creating a safer and simpler world.
+							</div>
+						</div>
+					</section>
+
+					<section class="content">
+						<p>If you think you've got what it takes, apply today.</p>
+					</section>
+
+
+
+					<section id="purpleform">
+						<form id="appForm" name="appForm">
+							<h2>Apply now</h2>
+							<div class="flex-row">
+								<div class="flex-half margin"><input type="text" class="stretch" name="firstName" ng-model="firstName" ng-class="{warning:(appForm.firstName.$invalid && (appForm.firstName.$dirty || submitAttempted))}" placeholder="First name" max-length="40" required/></div>
+								<div class="flex-half margin"><input type="text" class="stretch" name="lastName" ng-model="lastName" ng-class="{warning:(appForm.lastName.$invalid && (appForm.lastName.$dirty || submitAttempted))}" placeholder="Last name" max-length="40" required/></div>
+							</div>
+							<div class="flex-row">
+								<div class="flex-quarter margin"><input type="phone" class="stretch" name="phone" ng-model="phone" ng-pattern="validation.phone" ng-class="{warning:(appForm.phone.$invalid && (appForm.phone.$dirty || submitAttempted))}" placeholder="Phone" max-length="15" required/></div>
+								<div class="flex-half margin"><input type="email" class="stretch" name="email" ng-model="email" ng-class="{warning:(appForm.email.$invalid && (appForm.email.$dirty || submitAttempted))}" placeholder="Email" max-length="40"/></div>
+								<div class="flex-quarter margin"><input type="text" class="stretch" name="zip" ng-model="zip" ng-pattern="validation.zip" ng-class="{warning:(appForm.zip.$invalid && (appForm.zip.$dirty || submitAttempted))}" placeholder="Zip code" max-length="5" required/></div>
+							</div>
+
+							<div class="application-question">
+								<div class="flex-row">
+									<div>Do you have experience selling home security systems?</div>
+									<div class="radio-container">
+										<input id="selling-exp-yes" type="radio" ng-model="hasExperience" name="selling-exp" value="yes" /> Yes
+									</div>
+									<div class="radio-container">
+										<input id="selling-exp-no" type="radio" ng-model="hasExperience" name="selling-exp" value="no" /> No
+									</div>
+								</div>
+							</div>
+
+							<div class="application-button" ng-show="step==1">
+								<input type="button" class="secondary" ng-click="step=2" onclick="return false;" value="Continue"/>
+							</div>
+
+							<div ng-show="step==2 && hasExperience=='yes'">
+								<div class="application-question">
+									What company and how long?
+
+									<table id="work-history">
+										<thead>
+											<tr>
+												<th>Company</th>
+												<th>Years worked</th>
+												<th>Annual sales</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="wk in workHistory">
+												<td><input type="text" ng-model="wk.companyName" /></td>
+												<td><input type="number" ng-model="wk.yearsWorked" min="0" max="50" /></td>
+												<td><input type="number" ng-model="wk.annualSales" min="0" max="1000" /></td>
+												<td class="remove-work-history" ng-show="workHistory.indexOf(wk)!=0" ng-click="removeWorkHistory(workHistory.indexOf(wk))"><img src="view/images/standard/subtract.png" title="Remove work history" /></td>
+												<td ng-show="workHistory.indexOf(wk)==0"></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div id="add-company" ng-click="addWorkHistory()"><img src="view/images/standard/add.png" /> Add another company</div>
+
+								</div>
+							</div>
+
+							<div ng-show="step==2 && hasExperience=='no'">
+								<div class="application-question">
+									Do you have other sales experience?  Tell us about it.
+									<div><input type="text" class="stretch" ng-model="salesExperience" max-length="140" /></div>
+								</div>
+							</div>
+
+							<div ng-show="step==2">
+								<div class="application-question">
+									Sell yourself in 140 characters or less.
+									<div><textarea class="stretch" ng-model="sellYourself" name="sellYourself" ng-keyup="updateCharsRemaining()" ng-class="{warning:(appForm.sellYourself.$invalid && (appForm.sellYourself.$dirty || submitAttempted))}"></textarea></div>
+									<div id="chars-remaining">140 characters remaining</div>
+								</div>
+
+								<div class="application-button">
+									<input type="button" class="secondary" ng-click="submitApplication()" onclick="return false;" ng-show="!isSubmitting" value="Submit">
+									<div id="application-wait" ng-show="isSubmitting"></div>
+								</div>
+							</div>
+						</form>
+
+                	</section>
+                </div>
+                
+            <!-- END Body -->
+        </div>
+        <footer></footer>
+    </body>
+</html>   					
